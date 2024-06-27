@@ -3,10 +3,19 @@
 $numeriCasuali = [];
 
 
-for ($i=0; $i < 15; $i++) { 
+while (count($numeriCasuali) < 15) { 
     $numRandom = rand(1,50);
-    $newArray = array_push($numeriCasuali, $numRandom);
-    echo $newArray;
+    if ( !in_array($numRandom, $numeriCasuali, true) ){
+        $numeriCasuali[] = $numRandom;
+    }
 }
 
 ?>
+
+<ul>
+    <?php foreach ($numeriCasuali as $numeri) {  ?>
+        <li>
+           <?php echo $numeri; ?>
+        </li>
+    <?php } ?> 
+  </ul>
